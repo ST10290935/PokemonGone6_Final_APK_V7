@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1045691341741",
+    "project_id": "pokeapp-d2d65",
+    "storage_bucket": "pokeapp-d2d65.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045691341741:android:5cb206eaf136b5c3029f24",
+        "android_client_info": {
+          "package_name": "com.example.pokemon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1045691341741-9adlg1mbb7ckq09785snijsnf2feqndj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pokemon",
+            "certificate_hash": "f3307ca6f1df354fa150a8c78535efd5c4a1fed5"
+          }
+        },
+        {
+          "client_id": "1045691341741-5tehl86hsuv6t9rdiht6jjsdqkjl3cu2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD44oTKEDNHJpo94sBrCSZnTMfrWDhNvwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1045691341741-5tehl86hsuv6t9rdiht6jjsdqkjl3cu2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

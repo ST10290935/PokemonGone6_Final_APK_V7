@@ -1,0 +1,159 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Map -->
+    <org.osmdroid.views.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Encyclopedia Button -->
+    <Button
+        android:id="@+id/btnEncyclopedia"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="top|start"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="📖"
+        android:textSize="28sp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_light"
+        android:padding="0dp"
+        android:clipToPadding="false"
+        android:elevation="8dp" />
+
+    <!-- AR Mode Toggle Button -->
+    <Button
+        android:id="@+id/btnARMode"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="top|start"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="92dp"
+        android:text="AR"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:backgroundTint="#000000"
+        android:padding="0dp"
+        android:elevation="8dp" />
+
+    <!-- Compass  -->
+    <ImageView
+        android:id="@+id/compassView"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="Compass"
+        android:src="@drawable/ic_compass"
+        android:alpha="0.9" />
+
+    <!-- Bottom Player Info Card -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#CCFFFFFF"
+        android:padding="16dp"
+        android:elevation="8dp"
+        android:backgroundTint="#F0FFFFFF">
+
+        <!-- Avatar/Profile Picture -->
+        <ImageView
+            android:id="@+id/imgPlayerAvatar"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/player_avatar"
+            android:scaleType="centerInside"
+            android:background="@android:color/transparent"
+            android:contentDescription="Player Avatar" />
+
+        <!-- Player Info Container -->
+        <LinearLayout
+            android:id="@+id/playerInfoContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/imgPlayerAvatar"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <!-- Player Name -->
+            <TextView
+                android:id="@+id/txtPlayerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trainer"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:includeFontPadding="true" />
+
+            <!-- Steps Counter -->
+            <TextView
+                android:id="@+id/txtSteps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Steps: 0"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:includeFontPadding="true" />
+        </LinearLayout>
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- View Captured Button -->
+            <Button
+                android:id="@+id/btnViewCaptured"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:text="📦"
+                android:textSize="24sp"
+                android:includeFontPadding="true"
+                android:padding="0dp"
+                android:backgroundTint="#FF6B6B"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Settings Button -->
+            <Button
+                android:id="@+id/btnSettings"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:text="⚙️"
+                android:textSize="24sp"
+                android:includeFontPadding="true"
+                android:padding="0dp"
+                android:backgroundTint="#4ECDC4" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <!-- POKÉBALL Button -->
+    <ImageButton
+        android:id="@+id/btnPokeball"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="60dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/pokeball"
+        android:scaleType="centerInside"
+        android:elevation="12dp"
+        android:contentDescription="Throw Pokéball" />
+
+
+</FrameLayout>

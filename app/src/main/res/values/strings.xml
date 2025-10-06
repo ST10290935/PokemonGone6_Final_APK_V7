@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Pokemon</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoiY2hyb25vLTEyMyIsImEiOiJjbWczdGs2ODkxZHlvMmlxdzF0ZHh2M2lmIn0.j_8yPyD2KpT54P4bKOHNRg</string>
+
+</resources>

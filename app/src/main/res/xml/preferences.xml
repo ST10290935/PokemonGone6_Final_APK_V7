@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- MAP SETTINGS -->
+    <PreferenceCategory
+        android:title="Map Settings">
+
+        <SwitchPreferenceCompat
+            android:key="pref_map_rotation"
+            android:title="Enable Map Rotation"
+            android:summary="Rotate the map as you move"
+            android:defaultValue="true" />
+
+        <ListPreference
+            android:key="pref_map_theme"
+            android:title="Map Theme"
+            android:summary="Choose your preferred map style"
+            android:defaultValue="default"
+            android:entries="@array/map_theme_options"
+            android:entryValues="@array/map_theme_values" />
+    </PreferenceCategory>
+
+    <!-- AVATAR SETTINGS -->
+    <PreferenceCategory
+        android:title="Avatar Settings">
+
+        <EditTextPreference
+            android:key="pref_avatar_name"
+            android:title="Avatar Name"
+            android:summary="Set the name of your avatar"
+            android:defaultValue="You"
+            android:inputType="text" />
+
+        <ListPreference
+            android:key="pref_avatar_size"
+            android:title="Avatar Size"
+            android:summary="Choose how big your avatar appears"
+            android:defaultValue="medium"
+            android:entries="@array/avatar_size_options"
+            android:entryValues="@array/avatar_size_values" />
+        <Preference
+            android:key="pref_logout"
+            android:title="Logout"
+            android:summary="Sign out of your account"
+            app:titleTextColor="@android:color/holo_red_dark" />
+    </PreferenceCategory>
+
+    <!-- FUTURE FEATURES -->
+    <PreferenceCategory
+        android:title="Coming Soon"
+        android:summary="Exciting features we’re working on!">
+
+        <Preference
+            android:key="pref_online_sync"
+            android:title="Online Sync"
+            android:summary="Sync your data online"
+            android:enabled="false"/>
+
+        <Preference
+            android:key="pref_biometrics"
+            android:title="Biometric Login"
+            android:summary="Use fingerprint or face unlock"
+            android:enabled="false"/>
+
+        <Preference
+            android:key="pref_notifications"
+            android:title="Notifications"
+            android:summary="Get notified of events and captures"
+            android:enabled="false"/>
+
+        <Preference
+            android:key="pref_language"
+            android:title="Language"
+            android:summary="Select app language"
+            android:enabled="false"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>
