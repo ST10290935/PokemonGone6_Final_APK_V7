@@ -1,3 +1,11 @@
+//Code Attribution:
+//For the code below these are the sources I have used to improve my knowledge and implement features:
+//Android Knowledge, 2023. RecyclerView in Android Studio using Kotlin | Android Knowledge. [video online] Available at: <https://youtu.be/UDfyZLWyyVM?si=XkKwy4-9apD5AZcW> [Accessed 28 September 2025].
+//Android Knowledge, 2023. RecyclerView in Fragment in Android Studio using Java | YouTube Clone. [video online] Available at: <https://youtu.be/R62YihuL4VI?si=oo1H04X-CO5oKFN8> [Accessed 27 September 2025].
+//Foxandroid, 2022. Recyclerview in Fragment Android Studio Tutorial || Recyclerview || Fragment || Kotlin. [video online] Available at: <https://youtu.be/5mdV1hLbXzo?si=zTBFz3mHnEYuqx-Z> [Accessed 26 September 2025].
+//LearningWorldsz, 2020. Java Android Room Database | Insert and Query | RecyclerView Example. [video online] Available at: <https://youtu.be/ONb_MuPBBlg?si=MdldmJ9DF-Y9T_pX> [Accessed 26 September 2025].
+
+
 package com.example.pokemon
 
 import android.view.LayoutInflater
