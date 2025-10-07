@@ -1,3 +1,10 @@
+//Code Attribution:
+//For the code below these are the sources I have used to improve my knowledge and implement features:
+//Android Developers, 2025. Authenticate users with Sign in with Google. [online] Available at: <https://developer.android.com/identity/sign-in/credential-manager-siwg> [Accessed 29 September 2025].
+//Firebase, 2025. Get Started with Firebase Authentication on Android. [online] Available at: <https://firebase.google.com/docs/auth/android/start> [Accessed 29 September 2025].
+//LogRocket, 2021. Understanding the Android activity lifecycle. [online] Available at: <https://blog.logrocket.com/understanding-the-android-activity-lifecycle/> [Accessed 29 September 2025].
+
+
 package com.example.pokemon
 
 import android.Manifest
