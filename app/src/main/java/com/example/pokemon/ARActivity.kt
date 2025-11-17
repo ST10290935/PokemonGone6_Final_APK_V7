@@ -1,3 +1,9 @@
+//Code Attribution
+// For the below code I have used these sources to guide me:
+//Foxandroid, 2020. Firebase Cloud Firestore - Android studio tutorial | #1. [video online] Available at: < https://youtu.be/lz6euLh6zAM?si=e-IrhVTdUjDi-5Rx> [Accessed 13 November 2025].
+//Hey Delphi, 2023. Android : Android local SQLite sync with Firebase. [video online] Available at: < https://youtu.be/svof9u4wPb4?si=cZX0klU7aK6lCO0S> [Accessed 13 November 2025].
+
+
 package com.example.pokemon
 
 import android.Manifest
