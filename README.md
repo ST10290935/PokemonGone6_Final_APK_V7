@@ -9,7 +9,7 @@ For this ReadMe this is the template I used:
 othneildrew., 2024. Best-README-Template (version 1.1.2) [Source code]. Available at:< https://github.com/othneildrew/Best-README-Template.git> Accessed 26 April 2025].
  -->
 
-<!-- Project Heading -->
+
 
 
 ## <h3 align="center">PokeQuest.</h3>
