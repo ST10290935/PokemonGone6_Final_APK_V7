@@ -1,3 +1,11 @@
+//Code Attribution
+// For the below code I have used these sources to guide me:
+//Foxandroid, 2020. Firebase Cloud Firestore - Android studio tutorial | #1. [video online] Available at: < https://youtu.be/lz6euLh6zAM?si=e-IrhVTdUjDi-5Rx> [Accessed 13 November 2025].
+//Hey Delphi, 2023. Android : Android local SQLite sync with Firebase. [video online] Available at: < https://youtu.be/svof9u4wPb4?si=cZX0klU7aK6lCO0S> [Accessed 13 November 2025].
+//Phillip Lackner, 2023. Local Notifications in Android - The Full Guide (Android Studio Tutorial). [video online] Available at: < https://youtu.be/LP623htmWcI?si=ehlmF0X8SlagTwHO> [Accessed 16 November 2025].
+//Verify Beta, 2025. How to Send Push Notifications with Firebase in Android Studio (Step-by-Step Guide) | Android Mate. [video online] Available at: < https://youtu.be/bD-SGZT7ruc?si=PSgnVzcdRr0VCMya> [Accessed 16 November 2025].
+
+
 package com.example.pokemon.data
 
 import android.content.Context
@@ -73,14 +81,14 @@ object CreatureRepository {
 
                 // Mark as synced
                 db.creatureDao().markFirebaseSynced(creature.id)
-                Log.e("CREATURE_SYNC", "✅ Synced ${creature.name} to Firebase")
+                Log.e("CREATURE_SYNC", " Synced ${creature.name} to Firebase")
             }
 
             //Show notification after successful sync
             withContext(Dispatchers.Main) {
                 NotificationHelper.showSyncCompleteNotification(context, unsyncedCreatures.size)
             }
-            Log.e("CREATURE_SYNC", "✅ Firebase sync complete!")
+            Log.e("CREATURE_SYNC", " Firebase sync complete!")
             true
         } catch (e: Exception) {
             Log.e("CREATURE_SYNC", " Firebase sync failed: ${e.message}", e)
@@ -115,7 +123,7 @@ object CreatureRepository {
                 db.creatureDao().insert(creature)
             }
 
-            Log.e(" CREATURE_SYNC", "✅ Download complete!")
+            Log.e(" CREATURE_SYNC", " Download complete!")
             true
         } catch (e: Exception) {
             Log.e(" CREATURE_SYNC", " Download failed: ${e.message}", e)
