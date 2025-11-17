@@ -8,6 +8,7 @@
 package com.example.pokemon
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
@@ -45,9 +46,14 @@ import org.osmdroid.views.overlay.Polygon
 import kotlin.random.Random
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
+import com.example.pokemon.data.SettingsRepository
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
+import com.example.pokemon.utils.NotificationHelper
 
 
-class MainActivity : AppCompatActivity(), SensorEventListener {
+class MainActivity : BaseActivity(), SensorEventListener {
 
     private lateinit var mapView: MapView
     private lateinit var db: AppDatabase
@@ -70,6 +76,8 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     private lateinit var compassView: ImageView
     private var lastPosition: GeoPoint? = null
 
+    private var lastNotifiedStepMilestone = 0
+    private val STEP_MILESTONE = 100 // Notify every 100 steps
     private val creatures = listOf(
         R.drawable.creature1, R.drawable.creature2, R.drawable.creature3, R.drawable.creature4,
         R.drawable.creature5, R.drawable.creature6, R.drawable.creature7, R.drawable.creature8,
@@ -88,6 +96,16 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Initialize notification channels
+        NotificationHelper.createNotificationChannels(this)
+
+        // Check notification permission for Android 13+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (checkSelfPermission(android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(arrayOf(android.Manifest.permission.POST_NOTIFICATIONS), 1003)
+            }
+        }
+
         auth = FirebaseAuth.getInstance()
         currentUser = auth.currentUser
 
@@ -97,10 +115,45 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
             return
         }
 
-        Configuration.getInstance().load(applicationContext, getSharedPreferences("prefs", MODE_PRIVATE))
+        //sync logic
+        lifecycleScope.launch {
+            // Always load local settings first (works offline)
+            SettingsRepository.loadLocalSettings(this@MainActivity)
+
+            // If online, perform smart sync with conflict resolution
+            if (isOnline()) {
+                // Only sync if online, don't download (to avoid overwriting local changes)
+                SettingsRepository.syncToFirebase(this@MainActivity)
+
+                // Sync any unsynced local changes to Firebase
+                SettingsRepository.syncToFirebase(this@MainActivity)
+            } else {
+                Log.d("MainActivity", "Offline - using local settings only")
+            }
+        }
+
+        //  OSMDroid config
+        Configuration.getInstance().load(
+            applicationContext,
+            getSharedPreferences("prefs", MODE_PRIVATE)
+        )
+
         setContentView(R.layout.activity_main)
+
+        //  creature sync
         lifecycleScope.launch {
             CreatureRepository.syncRoomWithServer(this@MainActivity)
+        }
+
+        //  Firebase sync
+        lifecycleScope.launch {
+            if (isOnline()) {
+                // Download creatures from Firebase (for new device or fresh install)
+                CreatureRepository.downloadFromFirebase(this@MainActivity)
+
+                // Upload any unsynced creatures to Firebase
+                CreatureRepository.syncToFirebase(this@MainActivity)
+            }
         }
 
         prefs = androidx.preference.PreferenceManager.getDefaultSharedPreferences(this)
@@ -109,12 +162,16 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         stepCounterSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACTIVITY_RECOGNITION)
-                == PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.ACTIVITY_RECOGNITION
+                ) == PackageManager.PERMISSION_GRANTED
+            ) {
                 stepCounterSensor?.also { sensor ->
                     sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_UI)
                 }
             }
+
             if (stepCounterSensor == null) {
                 Toast.makeText(this, "No step counter sensor available", Toast.LENGTH_LONG).show()
             }
@@ -125,6 +182,14 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         setupListeners()
 
         mapView.postDelayed({ spawnRandomCreature() }, 5000)
+    }
+
+
+    private fun isOnline(): Boolean {
+        val connectivityManager = getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
+        val network = connectivityManager.activeNetwork ?: return false
+        val capabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
+        return capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
     }
 
     private fun setupViews() {
@@ -149,7 +214,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
         btnPokeball.setOnClickListener {
             if (activeCreatures.isEmpty()) {
-                Toast.makeText(this, "No creatures nearby!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.no_creature_near_toast), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -165,7 +230,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
                 activeCreatures.remove(closest)
                 mapView.invalidate()
             } else {
-                Toast.makeText(this, "No creatures in range!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.no_creature_inrange_toast), Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -183,7 +248,8 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         val playerPosition = GeoPoint(-33.9249, 18.4241)
         mapController.setZoom(18.0)
         mapController.setCenter(playerPosition)
-//this is the different options for the map
+
+        // different options for the map
         when (prefs.getString("pref_map_theme", "default")) {
             "default" -> mapView.setTileSource(org.osmdroid.tileprovider.tilesource.TileSourceFactory.MAPNIK)
             "satellite" -> mapView.setTileSource(org.osmdroid.tileprovider.tilesource.TileSourceFactory.USGS_SAT)
@@ -198,7 +264,8 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         }
 
         mapController.animateTo(playerPosition, 19.0, 2000L)
-//this is for the different avatar sizes
+
+        //for the different avatar sizes
         val sizePref = prefs.getString("pref_avatar_size", "medium")
         val avatarSize = when (sizePref) {
             "small" -> 128
@@ -254,7 +321,18 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
                 playerMarker.position = geoPoint
                 playerRadius.points = Polygon.pointsAsCircle(geoPoint, 25.0)
                 steps++
-                txtSteps.text = "Steps: $steps"
+                txtSteps.text = getString(R.string.step_count, steps)
+
+                //Check for step milestones when tapping map
+                val currentMilestone = (steps / STEP_MILESTONE) * STEP_MILESTONE
+                Log.e(" STEPS_TAP", "Steps: $steps, Milestone: $currentMilestone, Last: $lastNotifiedStepMilestone")
+
+                if (currentMilestone > lastNotifiedStepMilestone && currentMilestone > 0) {
+                    Log.e(" STEPS_TAP", " TRIGGERING NOTIFICATION for milestone: $currentMilestone")
+                    NotificationHelper.showStepMilestoneNotification(this, currentMilestone)
+                    lastNotifiedStepMilestone = currentMilestone
+                }
+
                 lastPosition?.let { last ->
                     val dx = geoPoint.longitude - last.longitude
                     val dy = geoPoint.latitude - last.latitude
@@ -393,6 +471,13 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
             if (initialStepCount == null) initialStepCount = totalSteps
             val stepsSinceStart = totalSteps - (initialStepCount ?: totalSteps)
             txtSteps.text = "Steps: $stepsSinceStart"
+
+
+            val currentMilestone = (stepsSinceStart / STEP_MILESTONE) * STEP_MILESTONE
+            if (currentMilestone > lastNotifiedStepMilestone && currentMilestone > 0) {
+                NotificationHelper.showStepMilestoneNotification(this, currentMilestone)
+                lastNotifiedStepMilestone = currentMilestone
+            }
         }
 
         if (event.sensor.type == Sensor.TYPE_ACCELEROMETER) {
@@ -407,6 +492,13 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
                 steps++
                 lastStepTime = now
                 txtSteps.text = "Steps: $steps"
+
+
+                val currentMilestone = (steps / STEP_MILESTONE) * STEP_MILESTONE
+                if (currentMilestone > lastNotifiedStepMilestone && currentMilestone > 0) {
+                    NotificationHelper.showStepMilestoneNotification(this, currentMilestone)
+                    lastNotifiedStepMilestone = currentMilestone
+                }
             }
         }
     }
@@ -456,15 +548,15 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
                 "nearby"
             }
 
-            Toast.makeText(this, "A wild $creatureName appeared to the $direction!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.wild_creature_appeared, creatureName, direction), Toast.LENGTH_LONG).show()
 
             marker.setOnMarkerClickListener { _, _ ->
                 if (isLoggedOut) return@setOnMarkerClickListener false
 
                 AlertDialog.Builder(this)
-                    .setTitle("A wild $creatureName appeared!")
-                    .setMessage("Do you want to capture it?")
-                    .setPositiveButton("Capture") { _, _ ->
+                    .setTitle(getString(R.string.wild_creature_appeared_title, creatureName))
+                    .setMessage(getString(R.string.capture_ask))
+                    .setPositiveButton(getString(R.string.capturetxt)) { _, _ ->
                         captureCreature(creatureName, creatureDrawableRes)
                         if (::mapView.isInitialized && !isLoggedOut) {
                             mapView.overlays.remove(marker)
@@ -472,7 +564,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
                             mapView.invalidate()
                         }
                     }
-                    .setNegativeButton("Ignore", null)
+                    .setNegativeButton(getString(R.string.ignoretxt), null)
                     .show()
                 true
             }
@@ -508,13 +600,28 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     private fun captureCreature(name: String, sprite: Int) {
         lifecycleScope.launch {
             try {
+                val userId = auth.currentUser?.uid ?: ""
+                val creature = Creature(
+                    name = name,
+                    sprite = sprite,
+                    capturedAt = System.currentTimeMillis(),
+                    syncedToFirebase = false,  // Mark as not synced yet
+                    userId = userId
+                )
+
                 withContext(Dispatchers.IO) {
-                    db.creatureDao().insert(Creature(name = name, sprite = sprite))
+                    db.creatureDao().insert(creature)
+
+                    // Try to sync to Firebase if online
+                    if (isOnline()) {
+                        CreatureRepository.syncToFirebase(this@MainActivity)
+                    }
                 }
-                Toast.makeText(this@MainActivity, "$name captured!", Toast.LENGTH_SHORT).show()
+
+                Toast.makeText(this@MainActivity, getString(R.string.creature_captured, name), Toast.LENGTH_SHORT).show()
             } catch (e: Exception) {
                 Log.e("MainActivity", "Failed to capture creature", e)
-                Toast.makeText(this@MainActivity, "Failed to capture $name", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity, getString(R.string.failed_to_capture, name), Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -525,11 +632,11 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
             val names = creatures.map { it.name }.toTypedArray()
             withContext(Dispatchers.Main) {
                 if (names.isEmpty()) {
-                    Toast.makeText(this@MainActivity, "No creatures captured yet.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity, getString(R.string.no_creatures_captured), Toast.LENGTH_SHORT).show()
                     return@withContext
                 }
                 AlertDialog.Builder(this@MainActivity)
-                    .setTitle("Captured Creatures")
+                    .setTitle(getString(R.string.captured_creatures))
                     .setItems(names, null)
                     .setPositiveButton("OK", null)
                     .show()

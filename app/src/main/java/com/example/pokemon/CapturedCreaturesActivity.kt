@@ -10,7 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class CapturedCreaturesActivity : AppCompatActivity() {
+class CapturedCreaturesActivity : BaseActivity() {
 
     private lateinit var db: AppDatabase
     private lateinit var recyclerView: RecyclerView
@@ -31,7 +31,7 @@ class CapturedCreaturesActivity : AppCompatActivity() {
                 db.creatureDao().getAll()
             }
 
-            // Always switch back to Main thread before setting adapter
+            //switch back to Main thread before setting adapter
             adapter = CreatureAdapter(creatures)
             recyclerView.adapter = adapter
         }

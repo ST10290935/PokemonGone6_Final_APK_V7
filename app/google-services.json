@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "1045691341741-m7mdd92fdgm0a34ofivgh77kjdgmar9f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pokemon",
+            "certificate_hash": "21137340784c78b22044f2b6abd2ecb65c642a86"
+          }
+        },
+        {
           "client_id": "1045691341741-5tehl86hsuv6t9rdiht6jjsdqkjl3cu2.apps.googleusercontent.com",
           "client_type": 3
         }

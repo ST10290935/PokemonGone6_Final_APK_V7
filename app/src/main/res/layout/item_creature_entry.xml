@@ -25,7 +25,7 @@
             android:id="@+id/txtCreatureName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Creature Name"
+            android:text="@string/item_creature_entry_name"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="#000"/>
@@ -34,7 +34,7 @@
             android:id="@+id/txtCreatureDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Description"
+            android:text="@string/item_creature_entry_desc"
             android:textSize="14sp"
             android:textColor="#444"
             android:layout_marginTop="4dp"/>

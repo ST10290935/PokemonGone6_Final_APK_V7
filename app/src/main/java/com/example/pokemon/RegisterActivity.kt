@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.pokemon.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 
-class RegisterActivity : AppCompatActivity() {
+class RegisterActivity : BaseActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var auth: FirebaseAuth

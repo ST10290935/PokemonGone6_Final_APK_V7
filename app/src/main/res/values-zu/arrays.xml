@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Avatar size -->
+    <string-array name="avatar_size_options">
+        <item>Omncane</item>
+        <item>Maphakathi</item>
+        <item>Omkhulu</item>
+    </string-array>
+
+    <string-array name="avatar_size_values">
+        <item>small</item>
+        <item>medium</item>
+        <item>large</item>
+    </string-array>
+
+    <!-- Map theme -->
+    <string-array name="map_theme_options">
+        <item>Okuzenzakalelayo</item>
+        <item>Isathelayithi</item>
+        <item>Omnyama</item>
+    </string-array>
+
+    <string-array name="map_theme_values">
+        <item>default</item>
+        <item>satellite</item>
+        <item>dark</item>
+    </string-array>
+</resources>

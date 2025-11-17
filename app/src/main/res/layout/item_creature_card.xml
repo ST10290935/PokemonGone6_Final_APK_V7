@@ -46,7 +46,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Captured Creature"
+                android:text="@string/item_creature_card_captured"
                 android:textSize="14sp"
                 android:textColor="#666666"
                 android:layout_marginTop="4dp"/>
@@ -56,7 +56,7 @@
                 android:id="@+id/txtCaptureDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Recently caught"
+                android:text="@string/item_creature_card_recent"
                 android:textSize="12sp"
                 android:textColor="#999999"
                 android:layout_marginTop="2dp"/>

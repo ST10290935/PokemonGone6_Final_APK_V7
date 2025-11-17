@@ -1,6 +1,7 @@
 package com.example.pokemon
 
 import android.Manifest
+import android.content.Context
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.os.Bundle
@@ -19,12 +20,13 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.pokemon.data.AppDatabase
 import com.example.pokemon.data.Creature
+import com.example.pokemon.data.CreatureRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.random.Random
 
-class ARActivity : AppCompatActivity() {
+class ARActivity : BaseActivity() {
 
     private lateinit var previewView: PreviewView
     private lateinit var creatureOverlay: FrameLayout
@@ -61,7 +63,7 @@ class ARActivity : AppCompatActivity() {
             if (currentCreatureName != null) {
                 captureCreature(currentCreatureName!!)
             } else {
-                Toast.makeText(this, "No creature to capture!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.no_creature_near_toast), Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -114,17 +116,40 @@ class ARActivity : AppCompatActivity() {
         val res = creatures[creatureNames.indexOf(name)]
         lifecycleScope.launch {
             try {
+                val userId = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.uid ?: ""
+                val creature = Creature(
+                    name = name,
+                    sprite = res,
+                    capturedAt = System.currentTimeMillis(),
+                    syncedToFirebase = false,
+                    userId = userId
+                )
+
                 withContext(Dispatchers.IO) {
-                    db.creatureDao().insert(Creature(name = name, sprite = res))
+                    db.creatureDao().insert(creature)
+
+                    // Try to sync to Firebase if online
+                    if (isOnline()) {
+                        CreatureRepository.syncToFirebase(this@ARActivity)
+                    }
                 }
-                Toast.makeText(this@ARActivity, "$name captured!", Toast.LENGTH_SHORT).show()
+
+                Toast.makeText(this@ARActivity, getString(R.string.creature_captured, name), Toast.LENGTH_SHORT).show()
                 currentCreature?.let { creatureOverlay.removeView(it) }
                 currentCreature = null
                 currentCreatureName = null
             } catch (e: Exception) {
-                Log.e("ARActivity", "Failed to capture", e)
-                Toast.makeText(this@ARActivity, "Capture failed", Toast.LENGTH_SHORT).show()
+                Log.e("ARActivity", getString(R.string.failed_capturetxt), e)
+                Toast.makeText(this@ARActivity, getString(R.string.capture_failtxt), Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+
+    private fun isOnline(): Boolean {
+        val connectivityManager = getSystemService(CONNECTIVITY_SERVICE) as android.net.ConnectivityManager
+        val network = connectivityManager.activeNetwork ?: return false
+        val capabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
+        return capabilities.hasCapability(android.net.NetworkCapabilities.NET_CAPABILITY_INTERNET)
     }
 }

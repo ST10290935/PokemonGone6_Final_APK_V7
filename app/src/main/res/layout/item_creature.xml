@@ -16,6 +16,6 @@
         android:layout_marginStart="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Creature Name"
+        android:text="@string/item_creature_name"
         android:textSize="18sp"/>
 </LinearLayout>

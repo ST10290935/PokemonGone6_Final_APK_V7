@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Pokemon</string>
+
+    <!--For login and reg -->
+    <string name="login">NGENA</string>
+    <string name="register">BHALISA</string>
+    <string name="GoogleSignIn">NGENA NGESIKHOMBUZO SIKA-GOOGLE</string>
+    <string name="use_biometric">Sebenzisa umunwe</string>
+    <string name="do_notHaveAcc">Awunayo i-akhawunti? Bhalisela</string>
+    <string name="map_rotate_heading">Vumela Ukuzungezisa KweMamephu</string>
+    <string name="map_rotate_summ">Jikisa imephu lapho uhamba</string>
+    <string name="map_theme_summ">Khetha isitayela semamephu osithandayo</string>
+    <string name="avatar_size_summ">Khetha ukuthi i-avatar yakho ibonakala inkulu kangakanani</string>
+    <string name="logout_summ">Phuma ku-akhawunti yakho</string>
+    <string name="lang_heading">Ulimi</string>
+    <string name="app_lang_btnsumm">Khetha ulimi lohlelo</string>
+    <string name="map_theme_heading">Isihloko Semephu</string>
+    <string name="avatar_name_heading">Igama le-Avatar</string>
+    <string name="avatar_name_summ">Beka igama le-avatar yakho</string>
+    <string name="avatar_size_heading">Usayizi We-Avatar</string>
+    <string name="logout_heading">Phuma</string>
+    <string name="item_creature_name">Creature Igama</string>
+    <string name="item_creature_card_recent">Muva nje ubanjwe</string>
+    <string name="creature_encyclopedia_text">Creature Isizindalwazi</string>
+    <string name="item_creature__entry_name">Creature Igama</string>
+    <string name="item_creature_card_captured">Isidalwa Creature</string>
+    <string name="item_creature__entry_desc">Incazelo</string>
+    <string name="item_creature_entry_name">Creature Igama</string>
+    <string name="item_creature_entry_desc">Incazelo</string>
+    <string name="step_countTxt">Izinyathelo: 0</string>
+    <string name="welcome_back">Siyakwamukela futhi!</string>
+    <string name="welcome_user">Siyakwamukela %1$s</string>
+    <string name="email_login_success">Umgudu wokungena uphumelele</string>
+    <string name="login_failed_error">Ukungena kuhlulekile: %1$s</string>
+    <string name="unknown_error">Iphutha elingaziwa</string>
+    <string name="enter_login_detail_toast">Sicela ufake i-imeyili nephasiwedi</string>
+    <string name="session_expire_toast">Iseshini iphelile. Sicela ungene futhi.</string>
+    <string name="no_saved_password_toast">Akukho iphasiwedi egciniwe. Sicela ungene futhi.</string>
+    <string name="use_gooogle_toast">Sicela usebenzise i-Google Sign-In</string>
+    <string name="no_saved_session_toast">Akukho seshini egcinwe. Sicela ungene ngemvume ngokwakho okwamanje.</string>
+    <string name="step_count">Izinyathelo: %1$d</string>
+    <string name="wild_creature_appeared">I-%1$s yasendle ivele e-%2$s!</string>
+    <string name="creature_captured">%1$s ibanjwe!</string>
+    <string name="failed_to_capture">Yehlulekile ukubamba %1$s</string>
+    <string name="no_creatures_captured">Azikho izidalwa ezibanjwe okwamanje.</string>
+    <string name="no_creature_near_toast">Akekho muntu eduze!</string>
+    <string name="no_creature_inrange_toast">Akuve nakho okuphilayo eduze!</string>
+    <string name="captured_creatures">Izidalwa Ezibanjwe</string>
+    <string name="logout_ask">Uqinisile ukuthi ufuna ukuphuma?</string>
+    <string name="cancel_option">Khansela</string>
+    <string name="lang_choose">Khetha Ulimi</string>
+    <string name="wild_creature_appeared_title">I-%1$s yasendle ivele!</string>
+    <string name="capture_ask">Ufuna ukukubamba?</string>
+    <string name="ignoretxt">Unganaki</string>
+    <string name="capturetxt">Thatha</string>
+    <string name="capture_failtxt">Ukubamba kwehlulekile</string>
+    <string name="failed_capturetxt">Akuzwanga kahle</string>
+    <!--For preferences xml -->
+
+
+
+</resources>

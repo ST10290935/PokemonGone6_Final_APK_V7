@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Pokemon</string>
+
+    <!--For login and reg -->
+    <string name="login">TEKEN IN</string>
+    <string name="register">REGISTREER</string>
+    <string name="GoogleSignIn">TEKEN IN MET GOOGLE</string>
+    <string name="use_biometric">Gebruik vingerafdruk</string>
+    <string name="do_notHaveAcc">Het jy geen rekening nie? Registreer</string>
+    <string name="map_rotate_heading">Aktiveer kaartrotasie</string>
+    <string name="map_rotate_summ">Draai die kaart soos jy beweeg</string>
+    <string name="map_theme_summ">Kies jou voorkeur-kaartstyl</string>
+    <string name="avatar_size_summ">Kies hoe groot jou avatar lyk</string>
+    <string name="logout_summ">Teken uit van jou rekening</string>
+    <string name="lang_heading">Taal</string>
+    <string name="app_lang_btnsumm">Kies app-taal</string>
+    <string name="map_theme_heading">Kaarttema</string>
+    <string name="avatar_name_heading">Avatar Naam</string>
+    <string name="avatar_name_summ">Stel die naam van jou avatar</string>
+    <string name="avatar_size_heading">Avatargrootte</string>
+    <string name="logout_heading">Teken uit</string>
+    <string name="item_creature_name">Creature Naam</string>
+    <string name="item_creature_card_recent">Onlangs gevangene</string>
+    <string name="creature_encyclopedia_text">Creature Ensiklopedie</string>
+    <string name="item_creature__entry_name">Creature Naam</string>
+    <string name="item_creature_card_captured">Gevangde Creature</string>
+    <string name="item_creature__entry_desc">Beskrywing</string>
+    <string name="item_creature_entry_name">Creature Naam</string>
+    <string name="item_creature_entry_desc">Beskrywing</string>
+    <string name="step_countTxt">Stappe: 0</string>
+    <string name="welcome_back">Welkom terug!</string>
+    <string name="welcome_user">Welkom %1$s</string>
+    <string name="email_login_success">Teken suksesvol aan</string>
+    <string name="login_failed_error">Teken-in het misluk: %1$s</string>
+    <string name="unknown_error">Onbekende fout</string>
+    <string name="enter_login_detail_toast">Voer asseblief jou e-pos en wagwoord in</string>
+    <string name="session_expire_toast">Sessie het verstryk. Log asseblief weer in.</string>
+    <string name="no_saved_password_toast">Geen gestoor wagwoord nie. Teken asseblief weer aan.</string>
+    <string name="use_gooogle_toast">Gebruik asseblief Google Teken-in</string>
+    <string name="no_saved_session_toast">Geen gestoor sessie gevind nie. Teken asseblief een keer handmatig aan.</string>
+    <string name="step_count">Stappe: %1$d</string>
+    <string name="wild_creature_appeared">\'n Wild %1$s het aan die %2$s verskyn!</string>
+    <string name="creature_captured">%1$s gevang!</string>
+    <string name="failed_to_capture">Kon nie %1$s vang nie</string>
+    <string name="no_creatures_captured">Nog geen wesens gevang nie.</string>
+    <string name="no_creature_near_toast">Geen wesens naby nie!</string>
+    <string name="no_creature_inrange_toast">Geen wesens binne bereik nie!</string>
+    <string name="captured_creatures">Gevangte Wesens</string>
+    <string name="logout_ask">Is jy seker jy wil uitlog?</string>
+    <string name="cancel_option">Kanselleer</string>
+    <string name="lang_choose">Kies Taal</string>
+    <string name="wild_creature_appeared_title">\'n Wild %1$s het verskyn!</string>
+    <string name="capture_ask">Wil jy dit vang?</string>
+    <string name="ignoretxt">Ignoreer</string>
+    <string name="capturetxt">Vang</string>
+    <string name="capture_failtxt">Vastlegging het misluk</string>
+    <string name="failed_capturetxt">Kon nie vasvang nie</string>
+    <!--For preferences xml -->
+
+
+
+</resources>

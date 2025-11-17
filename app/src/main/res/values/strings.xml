@@ -1,5 +1,87 @@
 <resources>
     <string name="app_name">Pokemon</string>
-    <string name="mapbox_access_token">pk.eyJ1IjoiY2hyb25vLTEyMyIsImEiOiJjbWczdGs2ODkxZHlvMmlxdzF0ZHh2M2lmIn0.j_8yPyD2KpT54P4bKOHNRg</string>
+    <string name="mapbox_access_token" translatable="false">pk.eyJ1IjoiY2hyb25vLTEyMyIsImEiOiJjbWczdGs2ODkxZHlvMmlxdzF0ZHh2M2lmIn0.j_8yPyD2KpT54P4bKOHNRg</string>
+
+    <!--For login and reg -->
+    <string name="login">LOGIN</string>
+    <string name="register">REGISTER</string>
+    <string name="use_biometric">Use Biometric</string>
+    <string name="do_notHaveAcc">Don\'t have an account? Register</string>
+    <string name="GoogleSignIn">SIGN IN WITH GOOGLE</string>
+
+    <!--For preferences xml -->
+
+    <string name="map_rotate_heading">Enable Map Rotation</string>
+    <string name="map_rotate_summ">Rotate the map as you move</string>
+
+    <string name="map_theme_heading">Map Theme</string>
+    <string name="map_theme_summ">Choose your preferred map style</string>
+
+    <string name="avatar_name_heading">Avatar Name</string>
+    <string name="avatar_name_summ">Set the name of your avatar</string>
+
+    <string name="avatar_size_heading">Avatar Size</string>
+    <string name="avatar_size_summ">Choose how big your avatar appears</string>
+
+    <string name="logout_heading">Logout</string>
+    <string name="logout_summ">Sign out of your account</string>
+
+    <string name="lang_heading">Language</string>
+    <string name="app_lang_btnsumm">Select app language</string>
+
+    <!--For item_creature xml -->
+    <string name="item_creature_name">Creature Name</string>
+
+    <!--For item_creature_card xml -->
+    <string name="item_creature_card_captured">Captured Creature</string>
+    <string name="item_creature_card_recent">Recently caught</string>
+
+    <!--For item_creature_entry xml -->
+    <string name="item_creature_entry_name">Creature Name</string>
+    <string name="item_creature_entry_desc">Description</string>
+
+    <!--For encyclopedia xml -->
+    <string name="creature_encyclopedia_text">Creature Encyclopedia</string>
+
+    
+    <string name="item_creature__entry_name">Creature Name</string>
+    <string name="item_creature__entry_desc">Descrption</string>
+
+    <!--For main activity xml -->
+    <string name="step_countTxt">Steps: 0</string>
+
+    <!--For Toasts -->
+    <string name="welcome_back">Welcome back!</string>
+
+    <string name="welcome_user">Welcome %1$s</string>
+
+    <string name="email_login_success">Login successful</string>
+
+    <string name="login_failed_error">Login failed: %1$s</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="enter_login_detail_toast">Please enter email and password</string>
+    <string name="session_expire_toast">Session expired. Please log in again.</string>
+    <string name="no_saved_password_toast">No saved password. Please log in again.</string>
+    <string name="use_gooogle_toast">Please use Google Sign-In</string>
+    <string name="no_saved_session_toast">No saved session found. Please log in once manually.</string>
+
+
+    <string name="step_count">Steps: %1$d</string>
+    <string name="wild_creature_appeared">A wild %1$s appeared to the %2$s!</string>
+    <string name="creature_captured">%1$s captured!</string>
+    <string name="failed_to_capture">Failed to capture %1$s</string>
+    <string name="no_creatures_captured">No creatures captured yet.</string>
+    <string name="no_creature_near_toast">No creatures nearby!</string>
+    <string name="no_creature_inrange_toast">No creatures in range!</string>
+    <string name="captured_creatures">Captured Creatures</string>
+    <string name="logout_ask">Are you sure you want to logout?</string>
+    <string name="cancel_option">Cancel</string>
+    <string name="lang_choose">Choose Language</string>
+    <string name="wild_creature_appeared_title">A wild %1$s appeared!</string>
+    <string name="capture_ask">Do you want to capture it?</string>
+    <string name="ignoretxt">Ignore</string>
+    <string name="capturetxt">Capture</string>
+    <string name="capture_failtxt">Capture failed</string>
+    <string name="failed_capturetxt">Failed to capture</string>
 
 </resources>
