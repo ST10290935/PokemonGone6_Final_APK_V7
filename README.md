@@ -157,6 +157,7 @@ PokeQuest is an immersive exploration and collecting experience that brings the 
   </ul>
 </details>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Design Considerations
 
 <details>
