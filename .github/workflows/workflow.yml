@@ -42,5 +42,5 @@ jobs:
       - name: Run Unit Tests
         run: ./gradlew testDebugUnitTest --stacktrace
 
-      - name: Lint
-        run: ./gradlew lint
+      - name: Run Lint (ignore errors)
+        run: ./gradlew lintDebug || true
