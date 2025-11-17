@@ -3,6 +3,18 @@
 //Android Developers, 2025. Authenticate users with Sign in with Google. [online] Available at: <https://developer.android.com/identity/sign-in/credential-manager-siwg> [Accessed 29 September 2025].
 //Firebase, 2025. Get Started with Firebase Authentication on Android. [online] Available at: <https://firebase.google.com/docs/auth/android/start> [Accessed 29 September 2025].
 //LogRocket, 2021. Understanding the Android activity lifecycle. [online] Available at: <https://blog.logrocket.com/understanding-the-android-activity-lifecycle/> [Accessed 29 September 2025].
+//Atif Perviaz, 2020. Biometric Authentication | Android Studio | Kotlin. [video online] Available at: < https://youtu.be/n5TRI1RB1Mc?si=e9y6897l129HrnVS> [Accessed 12 November 2025].
+//Codex Creator, 2023. How To Translate Apps In Android Studio. [video online] Available at: < https://youtu.be/v_ohTJnyNAA?si=-FVjgedLgWnnOQEq> [Accessed 16 November 2025].
+//Foxandroid, 2020. Firebase Cloud Firestore - Android studio tutorial | #1. [video online] Available at: < https://youtu.be/lz6euLh6zAM?si=e-IrhVTdUjDi-5Rx> [Accessed 13 November 2025].
+//Hey Delphi, 2023. Android : Android local SQLite sync with Firebase. [video online] Available at: < https://youtu.be/svof9u4wPb4?si=cZX0klU7aK6lCO0S> [Accessed 13 November 2025].
+//Indently, 2020. How to easily add translations to your app in Android Studio. [video online] Available at: < https://youtu.be/FQDvlIeAwGg?si=ItCzK4SGIZGG-oom> [Accessed 15 November 2025]. 
+//Mullatoez, 2020. Android Fingerprint Authentication in Kotlin | Biometric Authentication | Android Studio Tutorial. [video online] Available at: < https://youtu.be/sU9p6Pt6I2k?si=9lrt51KQb9aQY2v_> [Accessed 12 November 2025].
+//Mobile App Development, 2024. How to Translate Your App to Different Languages | Localization in Android | Android Studio. [video online] Available at: < https://youtu.be/qqBPnKCwLn8?si=iGzG6D9LtR6_x_E_> [Accessed 16 November 2025].
+//Phillip Lackner, 2021. How to Translate Your Android App to Any Language (SO EASY!) - Android Studio Tutorial. [video online] Available at: < https://youtu.be/LXbpsBtIIeM?si=O4LH5rggEhoaGKXO> [Accessed 15 November 2025].
+//Phillip Lackner, 2023. Local Notifications in Android - The Full Guide (Android Studio Tutorial). [video online] Available at: < https://youtu.be/LP623htmWcI?si=ehlmF0X8SlagTwHO> [Accessed 16 November 2025].
+//Phillip Lackner, 2024. How to Implement Biometric Auth in Your Android App. [video online] Available at: < https://youtu.be/_dCRQ9wta-I?si=KRuKHRS_UqQLD9vD> [Accessed 12 November 2025].
+//Verify Beta, 2025. How to Send Push Notifications with Firebase in Android Studio (Step-by-Step Guide) | Android Mate. [video online] Available at: < https://youtu.be/bD-SGZT7ruc?si=PSgnVzcdRr0VCMya> [Accessed 16 November 2025].
+
 
 
 package com.example.pokemon
