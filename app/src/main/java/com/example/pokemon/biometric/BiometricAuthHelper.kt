@@ -1,3 +1,9 @@
+//Code Attribution
+// For the below code I have used these sources to guide me:
+//Atif Perviaz, 2020. Biometric Authentication | Android Studio | Kotlin. [video online] Available at: < https://youtu.be/n5TRI1RB1Mc?si=e9y6897l129HrnVS> [Accessed 12 November 2025].
+//Mullatoez, 2020. Android Fingerprint Authentication in Kotlin | Biometric Authentication | Android Studio Tutorial. [video online] Available at: < https://youtu.be/sU9p6Pt6I2k?si=9lrt51KQb9aQY2v_> [Accessed 12 November 2025].
+//Phillip Lackner, 2024. How to Implement Biometric Auth in Your Android App. [video online] Available at: < https://youtu.be/_dCRQ9wta-I?si=KRuKHRS_UqQLD9vD> [Accessed 12 November 2025].
+
 package com.example.pokemon.biometric
 
 
