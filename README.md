@@ -1,6 +1,6 @@
 <a id="readme-top"></a>
 
-  
+
 <br />
 
 <!--
@@ -113,6 +113,40 @@ PokeQuest is an immersive exploration and collecting experience that brings the 
 </details>
 
 <details>
+  <summary style="font-weight: bold;">🔐 Biometric Authentication</summary>
+  <p>We integrated secure biometric login to protect player accounts and provide seamless access.</p>
+  <ul>
+    <li>Players can enable fingerprint or face recognition login from the Settings screen for quick and secure authentication.</li>
+    <li>The biometric system uses the device's native security features, ensuring user data remains protected.</li>
+    <li>This optional feature provides an extra layer of security while maintaining ease of access for returning players.</li>
+  </ul>
+  <p><strong>Enhancement Added:</strong> Biometric authentication streamlines the login experience while maintaining robust account security standards.</p>
+</details>
+
+<details>
+  <summary style="font-weight: bold;">🌐 Multi-Language Support</summary>
+  <p>The app now supports multiple languages to serve a diverse player base across South Africa.</p>
+  <ul>
+    <li>Players can switch between English, Afrikaans, and isiZulu through the Settings menu.</li>
+    <li>All UI elements, creature descriptions, and game instructions are fully localized in each language.</li>
+    <li>Language preferences are saved and persist across sessions, providing a consistent experience.</li>
+  </ul>
+  <p><strong>Enhancement Added:</strong> The localization framework is built to easily accommodate additional languages in future updates, promoting inclusivity and accessibility.</p>
+</details>
+
+<details>
+  <summary style="font-weight: bold;">🔔 Smart Push Notifications</summary>
+  <p>We implemented an intelligent notification system to keep players informed and motivated.</p>
+  <ul>
+    <li>Players receive push notifications when their offline data has been successfully synced after regaining connectivity.</li>
+    <li>Milestone notifications celebrate every 100 steps taken, encouraging continued physical activity and exploration.</li>
+    <li>Notifications are non-intrusive and can be customized or disabled in the Settings menu.</li>
+    <li>The notification system respects battery optimization and user preferences for a balanced experience.</li>
+  </ul>
+  <p><strong>Enhancement Added:</strong> Smart notifications provide timely feedback and motivation without overwhelming players, creating a more engaging gameplay loop.</p>
+</details>
+
+<details>
   <summary style="font-weight: bold;">🌍 Additional Improvements</summary>
   <p>Beyond the planned features, our implementation includes several unexpected upgrades that enhance user experience:</p>
   <ul>
@@ -211,16 +245,129 @@ PokeQuest is an immersive exploration and collecting experience that brings the 
   </table>
 </p>
 
-## Future Enhancements
+## Changelog: Part 2 to Part 3
+
 <details>
-  <ul>
-    <li><strong>Online multiplayer events and shared creature hunts:</strong> Collaborate with friends in real-time to discover and capture rare creatures together.</li>
-    <li><strong>Advanced 3D creature models:</strong> Bring creatures to life with detailed 3D models and realistic animations.</li>
-    <li><strong>Enhanced AR animations and gestures:</strong> Add interactive gestures and dynamic animations to make AR encounters more immersive.</li>
-    <li><strong>Social sharing features and friend lists:</strong> Share your catches, compete on leaderboards, and build a community of fellow adventurers.</li>
-  </ul>
+  <summary style="font-weight: bold;">📋 What's New in Part 3</summary>
+  
+  <div style="padding: 15px;">
+    
+  ### 🆕 Major Feature Additions
+  
+  <details>
+    <summary style="font-weight: bold; color: #2196F3;">🔐 Security Enhancements</summary>
+    <div style="color: #333; padding-left: 20px;">
+      <ul>
+        <li><strong>Biometric Authentication</strong> - Added fingerprint and face recognition login capabilities for enhanced security and user convenience</li>
+        <li>Optional security layer that integrates with device's native biometric systems</li>
+        <li>Configurable through Settings menu</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary style="font-weight: bold; color: #2196F3;">🌐 Localization & Accessibility</summary>
+    <div style="color: #333; padding-left: 20px;">
+      <ul>
+        <li><strong>Multi-Language Support</strong> - Full application translation into three languages:</li>
+        <ul>
+          <li>English (default)</li>
+          <li>Afrikaans</li>
+          <li>isiZulu</li>
+        </ul>
+        <li>All UI elements, creature descriptions, and game instructions fully localized</li>
+        <li>Language preferences persist across sessions</li>
+        <li>Easily extensible framework for additional languages</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary style="font-weight: bold; color: #2196F3;">🔔 Notification System</summary>
+    <div style="color: #333; padding-left: 20px;">
+      <ul>
+        <li><strong>Smart Push Notifications</strong> - Intelligent notification system with two key features:</li>
+        <ul>
+          <li><strong>Sync Notifications:</strong> Alerts when offline data successfully syncs after connectivity restoration</li>
+          <li><strong>Milestone Notifications:</strong> Celebrates every 100 steps taken to encourage physical activity</li>
+        </ul>
+        <li>Customizable and can be disabled in Settings</li>
+        <li>Battery-optimized implementation</li>
+        <li>Non-intrusive design that enhances engagement without overwhelming users</li>
+      </ul>
+    </div>
+  </details>
+
+  ### 🔧 Technical Improvements
+
+  <details>
+    <summary style="font-weight: bold; color: #2196F3;">Database & Storage</summary>
+    <div style="color: #333; padding-left: 20px;">
+      <ul>
+        <li>Enhanced Room Database implementation for better offline functionality</li>
+        <li>Improved data synchronization logic between local and remote storage</li>
+        <li>More robust error handling for database operations</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary style="font-weight: bold; color: #2196F3;">User Experience</summary>
+    <div style="color: #333; padding-left: 20px;">
+      <ul>
+        <li>Settings screen expanded with new configuration options</li>
+        <li>Improved UI consistency across all localized versions</li>
+        <li>Enhanced notification management system</li>
+        <li>Better feedback mechanisms for user actions</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary style="font-weight: bold; color: #2196F3;">Performance & Optimization</summary>
+    <div style="color: #333; padding-left: 20px;">
+      <ul>
+        <li>Optimized background services for step tracking and notifications</li>
+        <li>Improved battery efficiency for continuous location and sensor monitoring</li>
+        <li>Faster data sync operations when transitioning from offline to online mode</li>
+      </ul>
+    </div>
+  </details>
+
+  ### 📊 Features Carried Forward from Part 2
+
+  <div style="color: #333; padding-left: 20px;">
+    <ul>
+      <li>✅ Augmented Reality (AR) Capture Mode</li>
+      <li>✅ Gamification & Step-based Progression System</li>
+      <li>✅ Customizable Avatars & Profiles</li>
+      <li>✅ Offline Catch & Sync Mode</li>
+      <li>✅ Dynamic Creature Spawning System</li>
+      <li>✅ Directional Guidance</li>
+      <li>✅ Expanded Encyclopedia (CreatureDex)</li>
+      <li>✅ Firebase Authentication & Database Integration</li>
+      <li>✅ Google Sign-In Support</li>
+      <li>✅ OSMDroid Map Integration</li>
+      <li>✅ REST API Implementation</li>
+    </ul>
+  </div>
+
+  ### 🎯 Summary of Changes
+
+  <div style="background-color: #e3f2fd; padding: 15px; border-radius: 5px; margin-top: 15px;">
+    <p><strong>Part 3</strong> builds upon the solid foundation of Part 2 by adding three critical features that enhance security, accessibility, and user engagement:</p>
+    <ol>
+      <li><strong>Biometric Authentication</strong> - Modernizes security with quick, secure access</li>
+      <li><strong>Multi-Language Support</strong> - Makes the app accessible to South Africa's diverse linguistic communities</li>
+      <li><strong>Smart Push Notifications</strong> - Keeps users informed and motivated through intelligent, timely alerts</li>
+    </ol>
+    <p>These additions transform PokeQuest from a functional game into a polished, production-ready application that prioritizes user experience, security, and inclusivity.</p>
+  </div>
+
+  </div>
 </details>
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 ## REST API GitHub Link
 
 https://github.com/ST10290935/pokemon-api2.git
@@ -443,81 +590,95 @@ To get a local copy of the project running, follow these steps.
 </div>
 
 
-### References
-Android Developers, 2025. Authenticate users with Sign in with Google. [online] Available at: <https://developer.android.com/identity/sign-in/credential-manager-siwg> [Accessed 29 September 2025].
+### Acknowledgements
+Android Developers, 2025. Authenticate users with Sign in with Google. [online] Available at: <https://developer.android.com/identity/sign-in/credential-manager-siwg >[Accessed 29 September 2025].
+Atif Perviaz, 2020. Biometric Authentication | Android Studio | Kotlin. [video online] Available at: < https://youtu.be/n5TRI1RB1Mc?si=e9y6897l129HrnVS> [Accessed 12 November 2025].
 
 
-Android Knowledge, 2023. RecyclerView in Android Studio using Kotlin | Android Knowledge. [video online] Available at: <https://youtu.be/UDfyZLWyyVM?si=XkKwy4-9apD5AZcW> [Accessed 28 September 2025].
+Android Knowledge, 2023. RecyclerView in Android Studio using Kotlin | Android Knowledge. [video online] Available at: < https://youtu.be/UDfyZLWyyVM?si=XkKwy4-9apD5AZcW > [Accessed 28 September 2025].
 
 
-Android Knowledge, 2023. RecyclerView in Fragment in Android Studio using Java | YouTube Clone. [video online] Available at: <https://youtu.be/R62YihuL4VI?si=oo1H04X-CO5oKFN8> [Accessed 27 September 2025].
+Android Knowledge, 2023. RecyclerView in Fragment in Android Studio using Java | YouTube Clone. [video online] Available at: < https://youtu.be/R62YihuL4VI?si=oo1H04X-CO5oKFN8 > [Accessed 27 September 2025].
 
 
-Codes Easy, 2022. Login and Registration using Firebase in Android. [video online] Available at: <https://youtu.be/QAKq8UBv4GI?si=8ZBHqVJt5GyqiwNY> [Accessed 25 September 2025].
+Codes Easy, 2022. Login and Registration using Firebase in Android. [video online] Available at: <https://youtu.be/QAKq8UBv4GI?si=8ZBHqVJt5GyqiwNY >[Accessed 25 September 2025].
 
 
-Coding Meet, 2023. How to Store and Retrieve Images in Room Database | Android Studio Kotlin Tutorial. [video online] Available at: <https://youtu.be/0NVm3uVRNzg?si=n_sPPOCgiC0pQ8do> [Accessed 24 September 2025].
+Coding Meet, 2023. How to Store and Retrieve Images in Room Database | Android Studio Kotlin Tutorial. [video online] Available at: < https://youtu.be/0NVm3uVRNzg?si=n_sPPOCgiC0pQ8do >[Accessed 24 September 2025].
 
 
-Coding World, 2025. How To Generate SHA1 Key In Android Studio [2024] | 100% Working Method. [video online] Available at: <https://youtu.be/ClLZTrvsUSk?si=jiXRUUooIEsmJMiz> [Accessed 27 September 2025].
+Coding World, 2025. How To Generate SHA1 Key In Android Studio [2024] | 100% Working Method. [video online] Available at: < https://youtu.be/ClLZTrvsUSk?si=jiXRUUooIEsmJMiz > [Accessed 27 September 2025].
 
 
-CodingSTUFF, 2022. Google Sign In using Firebase in Kotlin (Android Studio 2022). [video online] Available at: <https://youtu.be/_318sOlkJBQ?si=jrFTWSEeZvbKk-nS> [Accessed 25 September 2025].
+CodingSTUFF, 2022. Google Sign In using Firebase in Kotlin (Android Studio 2022). [video online] Available at: <https://youtu.be/_318sOlkJBQ?si=jrFTWSEeZvbKk-nS >[Accessed 25 September 2025].
 
 
-Codrikaz, 2022. How to Remove Status Bar | How to Change the Color of the Status Bar | Android Studio | codrikaz. [video online] Available at: <https://youtu.be/VnzwhgiBj_Q?si=3NEsndemuJ_p_OdX> [Accessed 26 September 2025].
+Codrikaz, 2022. How to Remove Status Bar | How to Change the Color of the Status Bar | Android Studio | codrikaz. [video online] Available at: <https://youtu.be/VnzwhgiBj_Q?si=3NEsndemuJ_p_OdX > [Accessed 26 September 2025].
+
+Codex Creator, 2023. How To Translate Apps In Android Studio. [video online] Available at: < https://youtu.be/v_ohTJnyNAA?si=-FVjgedLgWnnOQEq> [Accessed 16 November 2025].
+
+DentistKiller., 2024. fakeBook (version 1) [Source code]. Available at: <https://github.com/Dentistkiller/fakeBook.git > [Accessed 27 September 2025].
 
 
-DentistKiller., 2024. fakeBook (version 1) [Source code]. Available at: <https://github.com/Dentistkiller/fakeBook.git> [Accessed 27 September 2025].
+Education is Life (joed goh), 2021. 07 Styles and Themes - User Interface | Material Design System | Android App Development in Kotlin. [video online] Available at: <https://youtu.be/ynOUzHFFMeg?si=puOjYNC9NjNCBSfD > Accessed 26 September 2025].
 
 
-Education is Life (joed goh), 2021. 07 Styles and Themes - User Interface | Material Design System | Android App Development in Kotlin. [video online] Available at: <https://youtu.be/ynOUzHFFMeg?si=puOjYNC9NjNCBSfD> [Accessed 26 September 2025].
+Firebase, 2025. Get Started with Firebase Authentication on Android. [online] Available at: <https://firebase.google.com/docs/auth/android/start > [Accessed 29 September 2025].
 
 
-Firebase, 2025. Get Started with Firebase Authentication on Android. [online] Available at: <https://firebase.google.com/docs/auth/android/start> [Accessed 29 September 2025].
+Foxandroid, 2020. Firebase Cloud Firestore - Android studio tutorial | #1. [video online] Available at: < https://youtu.be/lz6euLh6zAM?si=e-IrhVTdUjDi-5Rx> [Accessed 13 November 2025].
 
 
-Foxandroid, 2022. Recyclerview in Fragment Android Studio Tutorial || Recyclerview || Fragment || Kotlin. [video online] Available at: <https://youtu.be/5mdV1hLbXzo?si=zTBFz3mHnEYuqx-Z> [Accessed 26 September 2025].
+Foxandroid, 2022. Recyclerview in Fragment Android Studio Tutorial || Recyclerview || Fragment || Kotlin. [video online] Available at: < https://youtu.be/5mdV1hLbXzo?si=zTBFz3mHnEYuqx-Z> [Accessed 26 September 2025].
 
 
 GeeksForGeeks, 2025. How to implement preferences settings screen in Android?. [online] Available at: <https://www.geeksforgeeks.org/android/how-to-implement-preferences-settings-screen-in-android/> [Accessed 29 September 2025].
 
 
 Github, 2023. How to use the osmdroid library (Kotlin). [online] Available at: <https://github.com/osmdroid/osmdroid/wiki/How-to-use-the-osmdroid-library-(Kotlin)> [Accessed 25 September 2025].
+Hey Delphi, 2023. Android : Android local SQLite sync with Firebase. [video online] Available at: < https://youtu.be/svof9u4wPb4?si=cZX0klU7aK6lCO0S> [Accessed 13 November 2025].
+
+Indently, 2020. How to easily add translations to your app in Android Studio. [video online] Available at: < https://youtu.be/FQDvlIeAwGg?si=ItCzK4SGIZGG-oom> [Accessed 15 November 2025]. 
 
 
 Jante Adebowale, 2025. Ktor REST API - CRUD Operations | Building REST API with Ktor. [video online] Available at: <https://youtu.be/fzFshHGvBLo?si=essq0vFlFf15sLeS> [Accessed 28 September 2025].
 
 
-LearningWorldsz, 2020. Java Android Room Database | Insert and Query | RecyclerView Example. [video online] Available at: <https://youtu.be/ONb_MuPBBlg?si=MdldmJ9DF-Y9T_pX> [Accessed 26 September 2025].
+LearningWorldsz, 2020. Java Android Room Database | Insert and Query | RecyclerView Example. [video online] Available at: <https://youtu.be/ONb_MuPBBlg?si=MdldmJ9DF-Y9T_pX > [Accessed 26 September 2025].
 
 
-LogRocket, 2021. Understanding the Android activity lifecycle. [online] Available at: <https://blog.logrocket.com/understanding-the-android-activity-lifecycle/> [Accessed 29 September 2025].
+LogRocket, 2021. Understanding the Android activity lifecycle. [online] Available at: < https://blog.logrocket.com/understanding-the-android-activity-lifecycle/ > [Accessed 29 September 2025].
 
 
 Mehdi Haghgoo, 2020. Using Osmdroid in Android. [video online] Available at: <https://youtu.be/xoFtgcOoO1I?si=MqfVCCpWyN3TY81L> [Accessed 29 September 2025].
 
+Mullatoez, 2020. Android Fingerprint Authentication in Kotlin | Biometric Authentication | Android Studio Tutorial. [video online] Available at: < https://youtu.be/sU9p6Pt6I2k?si=9lrt51KQb9aQY2v_> [Accessed 12 November 2025].
+
+Mobile App Development, 2024. How to Translate Your App to Different Languages | Localization in Android | Android Studio. [video online] Available at: < https://youtu.be/qqBPnKCwLn8?si=iGzG6D9LtR6_x_E_> [Accessed 16 November 2025].
 
 othneildrew., 2024. Best-README-Template (version 1.1.2) [Source code]. Available at: <https://github.com/othneildrew/Best-README-Template.git> [Accessed 6 October 2025].
 
 
-Philipp Lackner, 2021. How to Build a Simple REST API With Ktor + Android App. [video online] Available at: <https://youtu.be/c6I3Dw0xDlQ?si=XBQkDhyRGzXJ6kf> [Accessed 27 September 2025].
+Philipp Lackner, 2021. How to Build a Simple REST API With Ktor + Android App. [video online] Available at: <https://youtu.be/c6I3Dw0xDlQ?si=XBQkDhyRGzXJ6kf >[Accessed 27 September 2025].
+
+Phillip Lackner, 2021. How to Translate Your Android App to Any Language (SO EASY!) - Android Studio Tutorial. [video online] Available at: < https://youtu.be/LXbpsBtIIeM?si=O4LH5rggEhoaGKXO> [Accessed 15 November 2025].
+
+Phillip Lackner, 2023. Local Notifications in Android - The Full Guide (Android Studio Tutorial). [video online] Available at: < https://youtu.be/LP623htmWcI?si=ehlmF0X8SlagTwHO> [Accessed 16 November 2025].
+
+Phillip Lackner, 2024. How to Implement Biometric Auth in Your Android App. [video online] Available at: < https://youtu.be/_dCRQ9wta-I?si=KRuKHRS_UqQLD9vD> [Accessed 12 November 2025].
 
 
 Philipp Lackner, 2023. The FULL Beginner Guide for Room in Android | Local Database Tutorial for Android. [video online] Available at: <https://youtu.be/bOd3wO0uFr8?si=OwbudYC_ikbiJa-w> [Accessed 25 September 2025].
 
 
-Stevdza-San, 2020. ROOM Database - #1 Create Database Schema | Android Studio Tutorial. [video online] Available at: <https://youtu.be/lwAvI3WDXBY?si=mq1S9X37wiOx5aX5> [Accessed 27 September 2025].
+Stevdza-San, 2020. ROOM Database - #1 Create Database Schema | Android Studio Tutorial. [video online] Available at: <https://youtu.be/lwAvI3WDXBY?si=mq1S9X37wiOx5aX5 >[Accessed 27 September 2025].
+
+Verify Beta, 2025. How to Send Push Notifications with Firebase in Android Studio (Step-by-Step Guide) | Android Mate. [video online] Available at: < https://youtu.be/bD-SGZT7ruc?si=PSgnVzcdRr0VCMya> [Accessed 16 November 2025].
+
 
 
 The Coders Integrity, 2018. Android Kotlin Pokemon Go Game Setting Up Projects and Generate API Key. [video online] Available at: <https://youtu.be/9VhX-iSf32E?si=hwB93WaBknm8kzTU> [Accessed 25 September 2025].
 
+Verify Beta, 2025. How to Send Push Notifications with Firebase in Android Studio (Step-by-Step Guide) | Android Mate. [video online] Available at: < https://youtu.be/bD-SGZT7ruc?si=PSgnVzcdRr0VCMya> [Accessed 16 November 2025].
 
-
-
-
-
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
