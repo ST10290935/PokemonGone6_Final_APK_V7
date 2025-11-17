@@ -215,7 +215,7 @@ PokeQuest is an immersive exploration and collecting experience that brings the 
         <sub>🔐 Register</sub>
       </td>
       <td align="center">
-        <img src="https://github.com/user-attachments/assets/96789cc5-057b-47d8-bed9-251ea980dfd2" alt="Screenshot 2" width="200"><br>
+        <img src="https://github.com/user-attachments/assets/c1c3d7a7-7948-4815-a5b0-b7eb55d5c26f" alt="Screenshot 2" width="200"><br>
         <sub>🔐 Login </sub>
       </td>
       <td align="center">
@@ -237,13 +237,32 @@ PokeQuest is an immersive exploration and collecting experience that brings the 
     </tr>
     <tr>
       <td align="center">
-        <img src="https://github.com/user-attachments/assets/b8c16cfc-de29-4ac1-ac68-6fd85f496ef1" alt="Screenshot 7" width="200"><br>
+        <img src="https://github.com/user-attachments/assets/827ef931-3388-486e-9b4c-39baebd3bfd4" alt="Screenshot 7" width="200"><br>
         <sub>⚙️ Settings</sub>
+      </td>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/93a0a8fe-4fb4-49e7-bef5-220049129a53" alt="Screenshot 7" width="200"><br>
+        <sub>🗣️ Lanuages</sub>
+      </td>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/51b83722-0c2c-4241-8c8f-993180310681" alt="Screenshot 7" width="200"><br>
+        <sub>🔃 Creature syncing</sub>
+      </td>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/abe803a3-06fe-4b96-ba55-2b495666af5c" alt="Screenshot 7" width="200"><br>
+        <sub>🔃 Settings syncing</sub>
       </td>
       <td></td>
     </tr>
   </table>
 </p>
+
+
+
+
+
+
+
 
 ## Changelog: Part 2 to Part 3
 
