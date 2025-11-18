@@ -612,6 +612,18 @@ To get a local copy of the project running, follow these steps.
 
 </div>
 
+### Release APK Screenshots
+
+<img width="1920" height="1080" alt="GenSignAPK1" src="https://github.com/user-attachments/assets/eaac66d8-617e-4d8f-9d98-f492b29801fb" />
+
+<img width="1920" height="1080" alt="GenSignAPK2" src="https://github.com/user-attachments/assets/ba388903-48b1-4115-9194-12db7f43b50b" />
+
+<img width="1920" height="1080" alt="GenSignAPK3" src="https://github.com/user-attachments/assets/e763006a-848e-46b5-a259-23b6b7b8bcc8" />
+
+<img width="1920" height="1080" alt="GenSignAPK4" src="https://github.com/user-attachments/assets/807eb419-f92f-4bcb-bc34-a8170e7638e0" />
+
+<img width="1920" height="1080" alt="GenSignAPK5" src="https://github.com/user-attachments/assets/04504095-a307-4ed5-a8c6-1f2c335fb9b7" />
+
 
 ### Acknowledgements
 Android Developers, 2025. Authenticate users with Sign in with Google. [online] Available at: <https://developer.android.com/identity/sign-in/credential-manager-siwg >[Accessed 29 September 2025].
